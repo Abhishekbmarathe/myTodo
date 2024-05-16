@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/utils.css">
+    <link rel="stylesheet" href="/styles/scroll.css">
+    <title>Todo List...</title>
+</head>
+
+<body>
+    <center>
+        <h1>Todo List...</h1>
+    </center>
+    <div class="container">
+        <div class="todoHead flex">
+            <form id="myForm">
+                <input id="content" type="text" name="description" placeholder="Enter your todo hear"
+                    autocomplete="off">
+                <button class="add">Add</button>
+            </form>
+        </div>
+
+        <div class="tcont">
+
+            <% todos.forEach(todo=> { %>
+                <div class="todoCard flex" id=<%=todo.id %> >
+                    <div>
+                        <%= todo.description %>
+                    </div>
+                    <div>
+                        <button class="delete">DELETE</button>
+                    </div>
+                </div>
+                <% }); %>
+
+        </div>
+
+
+        <script src="/js/script.js"></script>
+    </div>
+</body>
+
+</html>
