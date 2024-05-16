@@ -3,12 +3,15 @@ import path from 'path';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import Todo from './models/Todo.js'
+import dotenv from 'dotenv';
+dotenv.config();
+
 
 const app = express()
 const port = 3000
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/todo")
+mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
         console.log("MONGODB connected Successfully...");
     })
